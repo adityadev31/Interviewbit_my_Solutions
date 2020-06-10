@@ -31,7 +31,7 @@ class Solution{
             while(A.get(i)==0){
                 i++;
             }
-            ArrayList<Integer> x = new ArrayList<>();
+            ArrayList<Integer> x = new ArrayList<>();  // making a new list and adding so that no zero at starting
             while(i<A.size()){
                 x.add(A.get(i));
                 i++;
