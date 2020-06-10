@@ -34,3 +34,5 @@ public class Main{
     System.out.println(ob.coverPoints(X, Y));
   }
 }
+
+// ans ==> 0,0  1,1  1,2  =  2steps
