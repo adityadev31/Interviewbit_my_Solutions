@@ -6,9 +6,9 @@ class Solution{
         int sum = 0;
         int max = Integer.MIN_VALUE;
         for(int i=0; i<x.size(); i++){
-            sum = sum + x.get(i);
-            if(sum<0){ sum = 0; }
-            if(max<sum){ max = sum; }
+            sum = sum + x.get(i);       // current sum
+            if(sum<0){ sum = 0; }       // if current sum is -ve again set it to 0
+            if(max<sum){ max = sum; }   // if current sum > max till now then max = sum
         }
         return max;
     }
