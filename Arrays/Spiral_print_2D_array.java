@@ -10,20 +10,28 @@ public class Main {
         
         while(topBorder<=bottomBorder && leftBorder<=rightBorder){
             // print top 
-            for(int j=leftBorder; j<=rightBorder; j++){ System.out.print(arr[topBorder][j] + " "); }
-            topBorder++;
+            if(topBorder<=bottomBorder){
+                for(int j=leftBorder; j<=rightBorder; j++){ System.out.print(arr[topBorder][j] + " "); }
+                topBorder++;
+            }
             
             // print right 
-            for(int i=topBorder; i<=bottomBorder; i++){ System.out.print(arr[i][rightBorder] + " "); }
-            rightBorder--;
+            if(rightBorder>=leftBorder){
+                for(int i=topBorder; i<=bottomBorder; i++){ System.out.print(arr[i][rightBorder] + " "); }
+                rightBorder--;
+            }
             
             // print bottom 
-            for(int j=rightBorder; j>=leftBorder; j--){ System.out.print(arr[bottomBorder][j] + " "); }
-            bottomBorder--;
+            if(bottomBorder>=topBorder){
+                for(int j=rightBorder; j>=leftBorder; j--){ System.out.print(arr[bottomBorder][j] + " "); }
+                bottomBorder--;
+            }
             
             // print left 
-            for(int i=bottomBorder; i>=topBorder; i--){ System.out.print(arr[i][leftBorder] + " "); }
-            leftBorder++;
+            if(leftBorder<=rightBorder){
+                for(int i=bottomBorder; i>=topBorder; i--){ System.out.print(arr[i][leftBorder] + " "); }
+                leftBorder++;
+            }
         }
     }
     
