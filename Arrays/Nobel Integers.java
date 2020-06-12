@@ -37,4 +37,7 @@ public class Main {
 sorted A : [-5, 1, 2, 3, 3, 4, 4]   // in both the 3 the last one will b considered i.e, in index 4 and for both 4 last one will be considered
 -1
 
+[-5, 1, 2, 3, 3]    
+1                    // coz of 2
+
 **/
