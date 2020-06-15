@@ -2,11 +2,6 @@ import java.util.*;
 
 public class Main {
     
-    /**
-        [1,3,7]
-        [5,6,8]
-    **/
-    
     public static ArrayList<Integer> bubbleSort(ArrayList<Integer> A, ArrayList<Integer> D){
         int n = A.size();
         for(int i=0; i<n-1; i++){
@@ -26,16 +21,20 @@ public class Main {
     
     public static boolean booking(ArrayList<Integer> A, ArrayList<Integer> D, int rooms){
         bubbleSort(A, D);
-        int n = Collections.max(D);         // max time (last customer exit time)
         PriorityQueue<Integer> q = new PriorityQueue<Integer>();
+        int n = Collections.max(D);         // max time (last customer exit time)
         int custno = 0;
         int index = 0;
         for(int time=0; time<=n; time++){
-            if(index<D.size() && A.get(index)==time){         // arrival time & current time matched -> customer++
-                q.add(D.get(index));       // add that customer's dept time in queue
-                custno+=1;
-                index++;
+            // arival
+            while(index<D.size()){              // accept all arrivals at current time
+                if(A.get(index)==time){         // arrival time & current time matched -> customer++
+                    q.add(D.get(index));        // add that customer's dept time in queue
+                    custno+=1;
+                    index++;
+                }else{ break; }
             }
+            // departure
             while(q.size()>0){       // if current time is departure time then remove customers for that time
                 if(q.peek()==time){
                     q.poll();
@@ -85,5 +84,4 @@ public class Main {
         System.out.println("ans = "+ booking(A, D, rooms));
     }
 }
-
 // ans = true
