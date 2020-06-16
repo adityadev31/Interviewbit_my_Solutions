@@ -8,7 +8,7 @@ public class Solution {
         }  
         s1.append(A);
         s1.reverse();
-        if(flag==true)  // reversing it
+        if(flag==true)  // if -ve insert '-' at start
             s1.insert(0, '-');
         String strAns = s1.toString();
         long ans =  Long.valueOf(strAns);
