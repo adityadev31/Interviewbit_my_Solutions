@@ -1,19 +1,22 @@
 public class Solution {
     
-    public int GCD(int A, int B){
-        while(A!=0 && B!=0){
-            if(A==B){ return B; }
-            if(A>B){       // A == smaller always
-                int x = A;
-                A = B;
-                B = x;
-            }
-            int diff = B-A;
-            B = diff;
+    public int GCD(int A, int B) {
+        // make A smaller (considering B always > A)
+        if(A>B){
+            int x = A;
+            A = B;
+            B = x;
         }
-        if(A==0)
-            return B;
-        return A;
+        while(A!=0){
+            int diff = B-A;
+            if(diff>A){
+                B = diff;
+            }else{
+                B = A;
+                A = diff;
+            }
+        }
+        return B;
     }
     
     public int cpFact(int A, int B) {
