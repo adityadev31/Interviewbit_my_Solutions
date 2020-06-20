@@ -1,3 +1,10 @@
+/**
+
+task - arr[i] = arr[arr[i]]
+
+**/
+
+
 public class Solution {
     public void arrange(ArrayList<Integer> a) {
         int copy[] = new int[a.size()];
